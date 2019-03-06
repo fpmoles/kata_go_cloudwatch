@@ -35,7 +35,15 @@ func (ops *AWSAlertOps) CreateRootLoginAlert() string {
 		return FAILURE
 	}
 
-	return "success"
+	r = ops.createAlarm(logGroupName)
+
+	return r
+}
+
+func (ops *AWSAlertOps) createAlarm(logGroupName string) string {
+
+	//TODO: Implement the actual alarm now on the Log Group
+	return SUCCESS
 }
 
 func (ops *AWSAlertOps) createLogGroup(logGroupName string) string {
