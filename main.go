@@ -1,4 +1,4 @@
-package kata_go_cloudwatch
+package main
 
 import (
 	"fmt"
@@ -22,7 +22,7 @@ func main() {
 		Credentials: credentials.NewStaticCredentials(access, secret, ""),
 	})
 	if err != nil {
-		log.Fatal("error creating  session")
+		log.Fatalf("error creating session: %s", err)
 	}
 
 	alertOps := cloud.NewAwsAlertOps(sess)
